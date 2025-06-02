@@ -33,19 +33,12 @@ export function getNavigationType(fromPath, toPath) {
 }
 
 export function isBackNavigation(navigateEvent) {
-  if (
-    navigateEvent.navigationType === 'push' ||
-    navigateEvent.navigationType === 'replace'
-  ) {
-    return false
-  }
-  if (
+  return (
+    (navigateEvent.navigationType !== 'push' &&
+    navigateEvent.navigationType !== 'replace') &&
     navigateEvent.destination.index !== -1 &&
     navigateEvent.destination.index < navigation.currentEntry.index
-  ) {
-    return true
-  }
-  return false
+  )
 }
 
 export function shouldNotIntercept(navigationEvent) {
