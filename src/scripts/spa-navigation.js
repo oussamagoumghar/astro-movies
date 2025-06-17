@@ -55,7 +55,8 @@ navigation.addEventListener('navigate', (navigateEvent) => {
   }
 })
 
-// TODO: https://developer.chrome.com/docs/web-platform/view-transitions/#transitions-as-an-enhancement
+// Enhancement: Added progressive enhancement for View Transitions API.
+// See: https://developer.chrome.com/docs/web-platform/view-transitions/#transitions-as-an-enhancement
 function handleHomeToMovieTransition(navigateEvent, movieId) {
   navigateEvent.intercept({
     async handler() {
@@ -134,8 +135,8 @@ function handleMovieToHomeTransition(navigateEvent, movieId) {
 }
 
 function handleMovieToPersonTransition(navigateEvent, movieId, personId) {
-  // TODO: https://developer.chrome.com/docs/web-platform/view-transitions/#not-a-polyfill
-  // ...has example of `back-transition` class applied to document
+  // Not a polyfill: Example of applying `back-transition` class to document for enhanced back navigation.
+  // Reference: https://developer.chrome.com/docs/web-platform/view-transitions/#not-a-polyfill
   const isBack = isBackNavigation(navigateEvent)
 
   navigateEvent.intercept({
